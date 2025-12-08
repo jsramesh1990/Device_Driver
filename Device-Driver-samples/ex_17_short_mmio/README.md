@@ -1,9 +1,9 @@
 # **SHORT Memory-Mapped I/O (MMIO) Driver**
 
-## **🎯 Project Overview**
+## **  Project Overview**
 This Linux kernel module demonstrates **Memory-Mapped I/O (MMIO)** - a technique where hardware registers appear as regular memory locations. Instead of using special I/O instructions, you can read/write hardware by simply accessing specific memory addresses. It's like hardware becomes part of your computer's memory!
 
-## **🚀 Quick Start Guide**
+## **  Quick Start Guide**
 
 ### **Build & Install:**
 ```bash
@@ -29,7 +29,7 @@ sudo dd if=/dev/short bs=1 count=1
 sudo dmesg | tail -10
 ```
 
-## **🔍 How MMIO Works - Simple Analogy**
+## **  How MMIO Works - Simple Analogy**
 
 Think of MMIO like a **shared whiteboard**:
 
@@ -48,7 +48,7 @@ Regular Memory:    Hardware Memory:
 
 **Key Insight**: With MMIO, hardware registers look and act just like memory!
 
-## **🎨 Visual Working Flow**
+## **  Visual Working Flow**
 
 ```mermaid
 graph TB
@@ -72,7 +72,7 @@ graph TB
     style G fill:#f3e5f5
 ```
 
-## **🔧 Detailed Working Flow**
+## **  Detailed Working Flow**
 
 ### **1. Driver Setup - "Mapping the Territory"**
 ```
@@ -137,7 +137,7 @@ Deletes /dev/short
 All cleaned up!
 ```
 
-## **💡 Real-World MMIO Examples**
+## **  Real-World MMIO Examples**
 
 ### **Common MMIO Devices:**
 ```
@@ -157,12 +157,12 @@ qemu-system-x86_64 -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
 echo -n $'\x01' | sudo dd of=/dev/short  # Trigger exit
 ```
 
-## **📊 MMIO vs Port I/O Comparison**
+## **  MMIO vs Port I/O Comparison**
 
 | Feature | **MMIO (This Driver)** | **Port I/O (Previous)** |
 |---------|------------------------|------------------------|
 | **Access Method** | Memory reads/writes | Special I/O instructions |
-| **Speed** | ✅ Faster | ⚠️ Slower |
+| **Speed** |   Faster |  Slower |
 | **Hardware** | Modern devices | Legacy devices |
 | **Address Space** | Memory addresses | Port numbers |
 | **Example** | `mov [0xFF000000], AL` | `out 0x200, AL` |
@@ -236,7 +236,7 @@ for i in {1..10}; do
 done
 ```
 
-## **🎮 Interactive Learning Exercise**
+## **  Interactive Learning Exercise**
 
 ### **Build a "Virtual Hardware" Simulator:**
 ```c
@@ -254,7 +254,7 @@ void simulate_hardware(unsigned char value) {
 }
 ```
 
-## **⚠️ Safety & Best Practices**
+## **  Safety & Best Practices**
 
 ### **DO:**
 - ✅ Test with QEMU/virtual hardware first
@@ -268,7 +268,7 @@ void simulate_hardware(unsigned char value) {
 - ❌ Access unmapped regions
 - ❌ Use on production without testing
 
-## **🔍 Debugging Guide**
+## **  Debugging Guide**
 
 ### **Check Memory Regions:**
 ```bash
@@ -305,7 +305,7 @@ sudo dmesg -wH
    cat /dev/short
    ```
 
-## **📈 Performance Tips**
+## **  Performance Tips**
 
 1. **Use appropriate access size:**
    ```c
@@ -326,7 +326,7 @@ sudo dmesg -wH
    ioremap_nocache()
    ```
 
-## **🎓 Educational Value**
+## **  Educational Value**
 
 ### **Learn These Concepts:**
 1. **Virtual Memory** - How addresses get translated
@@ -349,7 +349,7 @@ for i in {1..100}; do
 done
 ```
 
-## **🚀 Advanced Topics**
+## **  Advanced Topics**
 
 ### **Extend This Driver:**
 1. **Add /proc interface** for status monitoring
@@ -363,7 +363,7 @@ done
 - Custom PCIe device drivers
 - Embedded system controllers
 
-## **📚 Resources & Next Steps**
+## ** Resources & Next Steps**
 
 ### **Further Learning:**
 - Linux Device Drivers, 3rd Ed. - Chapter 9
@@ -377,7 +377,7 @@ done
 3. Create a virtual test device in QEMU
 4. Benchmark MMIO vs Port I/O performance
 
-## **🧹 Cleanup**
+## ** Cleanup**
 ```bash
 # Remove module
 sudo rmmod short_mmio
@@ -391,6 +391,6 @@ cat /proc/iomem | grep -A2 -B2 FF000000
 
 ---
 
-**💡 Pro Tip**: This driver is perfect for learning MMIO concepts. Use it with QEMU virtual hardware before trying on real systems. Always check `dmesg` for clues about what's happening!
+** Pro Tip**: This driver is perfect for learning MMIO concepts. Use it with QEMU virtual hardware before trying on real systems. Always check `dmesg` for clues about what's happening!
 
-**🚨 Remember**: With great power (direct hardware access) comes great responsibility. Test carefully and understand what each memory write does!
+** Remember**: With great power (direct hardware access) comes great responsibility. Test carefully and understand what each memory write does!
