@@ -1,4 +1,4 @@
-# Linux Device Driver Development Lab
+# Linux Device Driver Development
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Linux-orange.svg)
@@ -6,7 +6,7 @@
 
 A comprehensive collection of Linux device driver examples and tutorials covering from basic concepts to advanced hardware interfaces.
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Project Structure](#project-structure)
@@ -21,7 +21,7 @@ A comprehensive collection of Linux device driver examples and tutorials coverin
 - [License](#license)
 - [References](#references)
 
-## 🎯 Overview
+##  Overview
 
 This repository contains a complete set of Linux device driver examples designed for educational purposes. The examples progress from simple "Hello World" modules to complex hardware drivers, covering all major concepts in Linux kernel development.
 
@@ -33,7 +33,7 @@ This repository contains a complete set of Linux device driver examples designed
 - Production-ready code patterns
 - Comprehensive documentation
 
-## 📁 Project Structure
+##  Project Structure
 
 <img width="1024" height="1536" alt="dd" src="https://github.com/user-attachments/assets/1537cdf0-5604-45d9-8f8c-da6a0ee193b0" />
 
@@ -44,7 +44,7 @@ This repository contains a complete set of Linux device driver examples designed
 
 
 
-## 🔧 Prerequisites
+##  Prerequisites
 
 ### System Requirements
 - **Linux Distribution**: Ubuntu 18.04+, Fedora, CentOS, or any modern Linux distro
